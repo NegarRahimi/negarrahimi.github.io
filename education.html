@@ -361,6 +361,30 @@
                 text-align: center;
             }
         }
+
+        /* Balance education content vertically */
+
+.education-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.education-grid {
+    flex: 1;
+    align-items: center;
+}
+
+.degree-description p {
+    font-size: clamp(15px, 1.08vw, 18px);
+    line-height: 1.55;
+}
+
+@media (max-width: 1050px) {
+    .education-grid {
+        flex: initial;
+        align-items: start;
+    }
+}
     </style>
 </head>
 
