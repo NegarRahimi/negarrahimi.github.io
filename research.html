@@ -8,7 +8,7 @@
           content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Research background and technical expertise of Negar Rahimi.">
+          content="Research background of Negar Rahimi, Ph.D. candidate at the University of Colorado Boulder.">
 
     <title>Negar Rahimi | Research</title>
 
@@ -30,7 +30,6 @@
             --accent: #704b3a;
             --line: rgba(48, 45, 42, 0.25);
             --serif: "Libre Caslon Display", Georgia, serif;
-            --name-font: "Playfair Display", Georgia, serif;
             --sans: "DM Sans", Arial, sans-serif;
         }
 
@@ -38,12 +37,13 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
+        html,
+        body {
+            margin: 0;
+            min-height: 100%;
         }
 
         body {
-            margin: 0;
             color: var(--dark);
             background-color: var(--background);
             font-family: var(--sans);
@@ -112,19 +112,20 @@
             cursor: pointer;
         }
 
-        /* Research introduction */
+        /* Research page */
 
-        .research-introduction {
+        .research-page {
             display: grid;
-            grid-template-columns: 0.65fr 1.35fr;
+            grid-template-columns: minmax(180px, 0.45fr)
+                                   minmax(500px, 1.55fr);
             gap: clamp(50px, 8vw, 130px);
 
-            padding: 110px 6% 120px;
-            border-bottom: 1px solid var(--line);
+            min-height: calc(100vh - 72px);
+            padding: 90px 7% 120px;
         }
 
         .page-label {
-            margin: 10px 0 0;
+            margin: 14px 0 0;
 
             color: var(--accent);
             font-size: 12px;
@@ -134,126 +135,43 @@
         }
 
         .research-content {
-            max-width: 930px;
-        }
-
-        h1,
-        h2 {
-            margin-top: 0;
-            font-family: var(--serif);
-            font-weight: normal;
-            line-height: 1.05;
-            letter-spacing: -0.04em;
+            max-width: 950px;
         }
 
         h1 {
-            margin-bottom: 55px;
-            font-size: clamp(65px, 10vw, 145px);
+            margin: 0 0 45px;
+
+            font-family: var(--serif);
+            font-size: clamp(65px, 9vw, 135px);
+            font-weight: normal;
+            line-height: 1;
+            letter-spacing: -0.045em;
         }
 
         .lead {
-            margin: 0 0 38px;
+            max-width: 900px;
+            margin: 0 0 45px;
 
             font-family: Georgia, serif;
-            font-size: clamp(23px, 3vw, 38px);
+            font-size: clamp(22px, 2.8vw, 36px);
             font-style: italic;
-            line-height: 1.45;
+            line-height: 1.5;
         }
 
-        .research-content p:not(.lead) {
-            max-width: 820px;
-            margin: 0 0 24px;
+        .research-text {
+            max-width: 850px;
+            padding-top: 10px;
+            border-top: 1px solid var(--line);
+        }
+
+        .research-text p {
+            margin: 28px 0 0;
             font-size: 17px;
+            line-height: 1.85;
         }
 
-        /* Current research */
-
-        .current-research {
-            padding: 110px 6%;
-            color: var(--light-background);
-            background-color: var(--dark);
-        }
-
-        .current-research .page-label {
-            color: var(--background);
-        }
-
-        .current-research h2 {
-            margin-bottom: 55px;
-            font-size: clamp(55px, 8vw, 110px);
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            border-top: 1px solid rgba(237, 228, 220, 0.3);
-            border-bottom: 1px solid rgba(237, 228, 220, 0.3);
-        }
-
-        .project {
-            min-height: 310px;
-            padding: 35px;
-            border-right: 1px solid rgba(237, 228, 220, 0.3);
-        }
-
-        .project:last-child {
-            border-right: none;
-        }
-
-        .project-number {
-            margin: 0 0 35px;
-
-            color: var(--background);
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.14em;
-        }
-
-        .project h3 {
-            margin: 0 0 20px;
-
-            font-family: var(--serif);
-            font-size: 32px;
-            font-weight: normal;
-            line-height: 1.2;
-        }
-
-        .project p {
-            margin: 0;
-            color: #ddd2c8;
-            font-size: 15px;
-        }
-
-        /* Technical expertise */
-
-        .expertise {
-            padding: 110px 6% 130px;
-            background-color: var(--background);
-        }
-
-        .expertise h2 {
-            margin-bottom: 55px;
-            font-size: clamp(55px, 8vw, 110px);
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-            max-width: 1500px;
-        }
-
-        .skills span {
-            padding: 10px 18px;
-            border: 1px solid var(--line);
-            border-radius: 50px;
-            font-size: 14px;
-        }
-
-        .skills span:hover {
-            color: var(--light-background);
-            background-color: var(--accent);
-            border-color: var(--accent);
+        .research-text p:first-child {
+            margin-top: 35px;
         }
 
         /* Footer */
@@ -266,7 +184,7 @@
             padding: 22px 6%;
 
             color: var(--light-background);
-            background-color: #24211f;
+            background-color: var(--dark);
             font-size: 13px;
         }
 
@@ -276,6 +194,10 @@
 
         footer a {
             text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--background);
         }
 
         /* Tablet */
@@ -310,22 +232,14 @@
                 border-bottom: 1px solid var(--line);
             }
 
-            .research-introduction {
+            .research-page {
                 grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 75px 7% 100px;
             }
 
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .project {
-                min-height: auto;
-                border-right: none;
-                border-bottom: 1px solid rgba(237, 228, 220, 0.3);
-            }
-
-            .project:last-child {
-                border-bottom: none;
+            .page-label {
+                margin: 0;
             }
         }
 
@@ -336,14 +250,20 @@
                 padding: 0 25px;
             }
 
-            .research-introduction,
-            .current-research,
-            .expertise {
-                padding: 75px 25px;
+            .research-page {
+                padding: 60px 25px 80px;
             }
 
             h1 {
                 font-size: 62px;
+            }
+
+            .lead {
+                font-size: 21px;
+            }
+
+            .research-text p {
+                font-size: 16px;
             }
 
             footer {
@@ -356,6 +276,8 @@
 </head>
 
 <body>
+
+    <!-- Navigation -->
 
     <header>
 
@@ -405,11 +327,11 @@
 
     </header>
 
+    <!-- Research content -->
+
     <main>
 
-        <!-- Research background -->
-
-        <section class="research-introduction">
+        <section class="research-page">
 
             <p class="page-label">
                 Research profile
@@ -427,168 +349,60 @@
                     computational modeling, and machine learning.
                 </p>
 
-                <p>
-                    I am currently pursuing my Ph.D. in the
-                    Neurophysiology of Movement Lab at the University
-                    of Colorado Boulder. My research uses machine
-                    learning, deep learning, and computational modeling
-                    to analyze biomedical and physiological signals,
-                    including electromyography (EMG) and center of
-                    pressure (CoP).
-                </p>
-
-                <p>
-                    My ongoing research investigates how visual
-                    biofeedback influences balance control and muscle
-                    activation during standing tasks performed with
-                    and without visual feedback.
-                </p>
-
-                <p>
-                    I have also contributed to a project investigating
-                    the effects of transcutaneous electrical nerve
-                    stimulation (TENS) in individuals with multiple
-                    sclerosis.
-                </p>
-
-                <p>
-                    Before beginning my Ph.D., I completed my M.Sc. and
-                    B.Sc. degrees in Biomedical Engineering at Amirkabir
-                    University of Technology. My master’s research
-                    involved modeling the effects of visual deprivation
-                    during treadmill walking, while my bachelor’s
-                    research involved analyzing anti-saccade
-                    eye-movement reaction times using a custom-designed
-                    user interface.
-                </p>
-
-                <p>
-                    In addition to my academic experience, I worked as
-                    a Research and Development Engineer, where I
-                    developed skills in product development and
-                    innovation, team coordination, and operational
-                    efficiency.
-                </p>
-
-            </div>
-
-        </section>
-
-        <!-- Main research areas -->
-
-        <section class="current-research">
-
-            <p class="page-label">
-                Current and previous work
-            </p>
-
-            <h2>
-                Research Areas
-            </h2>
-
-            <div class="project-grid">
-
-                <article class="project">
-
-                    <p class="project-number">
-                        01 / CURRENT
-                    </p>
-
-                    <h3>
-                        Visual biofeedback and balance
-                    </h3>
+                <div class="research-text">
 
                     <p>
-                        Investigating the effects of visual biofeedback
-                        on postural control and muscle activation during
-                        standing balance tasks.
+                        I am currently pursuing my Ph.D. in the
+                        Neurophysiology of Movement Lab at the University
+                        of Colorado Boulder. My research uses machine
+                        learning, deep learning, and computational modeling
+                        to analyze biomedical and physiological signals,
+                        including electromyography (EMG) and center of
+                        pressure (CoP).
                     </p>
-
-                </article>
-
-                <article class="project">
-
-                    <p class="project-number">
-                        02 / CLINICAL
-                    </p>
-
-                    <h3>
-                        TENS and multiple sclerosis
-                    </h3>
 
                     <p>
-                        Contributing to clinical research examining the
-                        effects of TENS on neuromuscular function and
-                        physical performance in individuals with
-                        multiple sclerosis.
+                        My ongoing research investigates how visual
+                        biofeedback influences balance control and muscle
+                        activation during standing tasks performed with
+                        and without visual feedback.
                     </p>
-
-                </article>
-
-                <article class="project">
-
-                    <p class="project-number">
-                        03 / PREVIOUS
-                    </p>
-
-                    <h3>
-                        Vision, gait, and eye movements
-                    </h3>
 
                     <p>
-                        Modeling visual deprivation during treadmill
-                        walking and analyzing anti-saccade
-                        eye-movement reaction times.
+                        I have also contributed to a project investigating
+                        the effects of transcutaneous electrical nerve
+                        stimulation (TENS) in individuals with multiple
+                        sclerosis.
                     </p>
 
-                </article>
+                    <p>
+                        Before beginning my Ph.D., I completed my M.Sc. and
+                        B.Sc. degrees in Biomedical Engineering at
+                        Amirkabir University of Technology. My master’s
+                        research involved modeling the effects of visual
+                        deprivation during treadmill walking, while my
+                        bachelor’s research involved analyzing
+                        anti-saccade eye-movement reaction times using a
+                        custom-designed user interface.
+                    </p>
 
-            </div>
+                    <p>
+                        In addition to my academic experience, I worked as
+                        a Research and Development Engineer, where I
+                        developed skills in product development and
+                        innovation, team coordination, and operational
+                        efficiency.
+                    </p>
 
-        </section>
-
-        <!-- Technical expertise -->
-
-        <section class="expertise">
-
-            <p class="page-label">
-                Methods and tools
-            </p>
-
-            <h2>
-                Technical Expertise
-            </h2>
-
-            <div class="skills">
-
-                <span>MATLAB</span>
-                <span>Python</span>
-                <span>Machine Learning</span>
-                <span>Deep Learning</span>
-                <span>Statistical Analysis</span>
-                <span>Computational Modeling</span>
-                <span>Electromyography</span>
-                <span>Motor Units</span>
-                <span>Center of Pressure</span>
-                <span>Force Sensors</span>
-                <span>Wearable Sensors</span>
-                <span>IMU</span>
-                <span>TENS</span>
-                <span>NMES</span>
-                <span>TensorFlow</span>
-                <span>PyTorch</span>
-                <span>Scikit-learn</span>
-                <span>MATLAB Simulink</span>
-                <span>C/C++</span>
-                <span>Clinical Research</span>
-                <span>Experimental Design</span>
-                <span>Data Collection</span>
+                </div>
 
             </div>
 
         </section>
 
     </main>
+
+    <!-- Footer -->
 
     <footer>
 
@@ -603,6 +417,8 @@
         </a>
 
     </footer>
+
+    <!-- Mobile navigation -->
 
     <script>
         const menuButton =
