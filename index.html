@@ -13,7 +13,9 @@
     <title>Negar Rahimi | About Me</title>
 
     <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
     <link rel="preconnect"
           href="https://fonts.gstatic.com"
           crossorigin>
@@ -60,21 +62,15 @@
             z-index: 100;
 
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
 
             min-height: 78px;
             padding: 0 6%;
 
-            background-color: rgba(196, 176, 158, 0.96);
+            background-color: rgba(237, 228, 220, 0.97);
             border-bottom: 1px solid var(--line);
             backdrop-filter: blur(12px);
-        }
-
-        .name {
-            font-family: var(--serif);
-            font-size: 34px;
-            text-decoration: none;
         }
 
         nav {
@@ -116,8 +112,8 @@
 
         .hero {
             display: grid;
-            grid-template-columns: minmax(260px, 0.8fr)
-                               minmax(360px, 1.2fr);
+            grid-template-columns: minmax(420px, 1.25fr)
+                                   minmax(260px, 0.75fr);
             align-items: center;
 
             min-height: calc(100vh - 78px);
@@ -125,25 +121,22 @@
             padding: 80px 9%;
         }
 
-        .photo-container {
-            width: min(100%, 410px);
-            aspect-ratio: 4 / 5;
-            justify-self: end;
-
-            overflow: hidden;
-            border-radius: 48% 48% 5px 5px;
-            background-color: #ad9886;
+        .hero-text {
+            max-width: 800px;
         }
 
-        .profile-photo {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .hero-name {
+            margin: 0 0 12px;
+
+            font-family: var(--serif);
+            font-size: clamp(64px, 8vw, 120px);
+            font-weight: normal;
+            line-height: 1;
+            letter-spacing: -0.04em;
         }
 
         .university {
-            margin-bottom: 15px;
+            margin: 0 0 20px;
 
             color: var(--accent);
             font-size: 12px;
@@ -161,54 +154,38 @@
         }
 
         h1 {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             font-size: clamp(48px, 6vw, 90px);
             letter-spacing: -0.04em;
         }
 
         .introduction {
-            max-width: 690px;
-            margin-bottom: 25px;
+            max-width: 730px;
+            margin-bottom: 0;
 
             font-family: Georgia, serif;
-            font-size: clamp(18px, 2vw, 24px);
+            font-size: clamp(17px, 1.7vw, 23px);
             font-style: italic;
             line-height: 1.55;
         }
 
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 18px;
-            margin-top: 35px;
+        /* Photograph */
+
+        .photo-container {
+            width: min(100%, 410px);
+            aspect-ratio: 4 / 5;
+            justify-self: end;
+
+            overflow: hidden;
+            border-radius: 48% 48% 5px 5px;
+            background-color: #ad9886;
         }
 
-        .button {
-            display: inline-block;
-            padding: 12px 22px;
-
-            color: white;
-            background-color: var(--dark);
-            border: 1px solid var(--dark);
-
-            font-size: 13px;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .button:hover {
-            background-color: var(--accent);
-            border-color: var(--accent);
-        }
-
-        .secondary-button {
-            color: var(--dark);
-            background-color: transparent;
-        }
-
-        .secondary-button:hover {
-            color: white;
+        .profile-photo {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* About section */
@@ -356,6 +333,25 @@
             font-size: 19px;
         }
 
+        .button {
+            display: inline-block;
+            padding: 12px 22px;
+
+            color: var(--dark);
+            background-color: var(--light-background);
+            border: 1px solid var(--light-background);
+
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            color: white;
+            background-color: var(--accent);
+            border-color: var(--accent);
+        }
+
         /* Footer */
 
         footer {
@@ -379,9 +375,17 @@
             text-decoration: none;
         }
 
-        /* Mobile layout */
+        footer a:hover {
+            color: var(--background);
+        }
 
-        @media (max-width: 950px) {
+        /* Tablet and mobile layout */
+
+        @media (max-width: 1050px) {
+            header {
+                justify-content: flex-end;
+            }
+
             .menu-button {
                 display: block;
             }
@@ -398,7 +402,7 @@
                 gap: 0;
 
                 padding: 10px 25px 25px;
-                background-color: var(--background);
+                background-color: var(--light-background);
                 border-bottom: 1px solid var(--line);
             }
 
@@ -414,19 +418,20 @@
             .hero {
                 grid-template-columns: 1fr;
                 min-height: auto;
+                padding-top: 65px;
+            }
+
+            .hero-text {
+                text-align: left;
+            }
+
+            .hero-name {
+                font-size: clamp(60px, 14vw, 95px);
             }
 
             .photo-container {
                 width: min(75vw, 350px);
                 justify-self: center;
-            }
-
-            .hero-text {
-                text-align: center;
-            }
-
-            .buttons {
-                justify-content: center;
             }
 
             .about {
@@ -453,15 +458,19 @@
                 padding: 55px 25px 70px;
             }
 
+            .hero-name {
+                font-size: 57px;
+            }
+
+            h1 {
+                font-size: 45px;
+            }
+
             .about,
             .research-interests,
             .expertise,
             .contact-preview {
                 padding: 75px 25px;
-            }
-
-            h1 {
-                font-size: 48px;
             }
 
             .section-heading {
@@ -482,7 +491,6 @@
     <!-- Navigation -->
 
     <header>
-        <a class="name" href="index.html">Negar Rahimi</a>
 
         <button class="menu-button"
                 type="button"
@@ -501,6 +509,7 @@
             <a href="cv.html">CV</a>
             <a href="contact.html">Contact</a>
         </nav>
+
     </header>
 
     <main>
@@ -509,13 +518,11 @@
 
         <section class="hero">
 
-            <div class="photo-container">
-                <img class="profile-photo"
-                     src="images/profile.jpg"
-                     alt="Negar Rahimi">
-            </div>
-
             <div class="hero-text">
+
+                <p class="hero-name">
+                    Negar Rahimi
+                </p>
 
                 <p class="university">
                     University of Colorado Boulder
@@ -535,13 +542,23 @@
 
             </div>
 
+            <div class="photo-container">
+
+                <img class="profile-photo"
+                     src="profile.jpg"
+                     alt="Negar Rahimi">
+
+            </div>
+
         </section>
 
         <!-- About Me -->
 
         <section class="about" id="about">
 
-            <p class="section-number">01 / About Me</p>
+            <p class="section-number">
+                01 / About Me
+            </p>
 
             <div class="about-content">
 
@@ -600,7 +617,9 @@
 
                     <p class="research-letter">A</p>
 
-                    <h3>Balance and visual feedback</h3>
+                    <h3>
+                        Balance and visual feedback
+                    </h3>
 
                     <p>
                         Investigating visual biofeedback and muscle
@@ -614,7 +633,9 @@
 
                     <p class="research-letter">B</p>
 
-                    <h3>Physiological signal analysis</h3>
+                    <h3>
+                        Physiological signal analysis
+                    </h3>
 
                     <p>
                         Analyzing EMG, motor-unit, CoP, force, and IMU
@@ -628,7 +649,9 @@
 
                     <p class="research-letter">C</p>
 
-                    <h3>Machine learning and digital health</h3>
+                    <h3>
+                        Machine learning and digital health
+                    </h3>
 
                     <p>
                         Developing machine-learning and deep-learning
@@ -703,7 +726,7 @@
 
     </footer>
 
-    <!-- Mobile-menu behavior -->
+    <!-- Mobile navigation -->
 
     <script>
         const menuButton =
@@ -725,6 +748,7 @@
         navigation.querySelectorAll("a").forEach(function (link) {
             link.addEventListener("click", function () {
                 navigation.classList.remove("open");
+
                 menuButton.setAttribute(
                     "aria-expanded",
                     "false"
