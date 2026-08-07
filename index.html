@@ -280,6 +280,42 @@
                 font-size: 27px;
             }
         }
+
+                /* Footer */
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 22px 6%;
+
+            color: var(--navigation-background);
+            background-color: var(--dark);
+            font-size: 13px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer a {
+            color: var(--navigation-background);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--background);
+        }
+
+        @media (max-width: 550px) {
+            footer {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+        
     </style>
 </head>
 
@@ -374,7 +410,21 @@
         </section>
 
     </main>
+    <footer>
 
+        <p>
+            &copy;
+            <span id="current-year">2026</span>
+            Negar Rahimi
+        </p>
+
+        <a href="mailto:Negar.Rahimi@colorado.edu">
+            Negar.Rahimi@colorado.edu
+        </a>
+
+    </footer>
+    document.querySelector("#current-year").textContent =
+    new Date().getFullYear();
     <script>
         const menuButton =
             document.querySelector(".menu-button");
