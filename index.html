@@ -3,14 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
           content="Academic website of Negar Rahimi, Ph.D. candidate at the University of Colorado Boulder.">
 
     <title>Negar Rahimi | About Me</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
     <link rel="preconnect"
           href="https://fonts.gstatic.com"
           crossorigin>
@@ -21,7 +25,7 @@
     <style>
         :root {
             --background: #c4b09e;
-            --light-background: #ede4dc;
+            --navigation-background: #ede4dc;
             --dark: #302d2a;
             --accent: #704b3a;
             --line: rgba(48, 45, 42, 0.25);
@@ -34,12 +38,13 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
+        html,
+        body {
+            margin: 0;
+            min-height: 100%;
         }
 
         body {
-            margin: 0;
             color: var(--dark);
             background-color: var(--background);
             font-family: var(--sans);
@@ -65,7 +70,7 @@
             min-height: 72px;
             padding: 0 28px;
 
-            background-color: var(--light-background);
+            background-color: var(--navigation-background);
             border-bottom: 1px solid var(--line);
         }
 
@@ -118,7 +123,7 @@
 
             min-height: calc(100vh - 72px);
             gap: clamp(45px, 6vw, 100px);
-            padding: 75px 4%;
+            padding: 70px 4%;
         }
 
         .hero-text {
@@ -129,7 +134,7 @@
 
         .hero-name {
             position: relative;
-            transform: translateY(-110px);
+            transform: translateY(-90px);
 
             margin: 0 0 12px;
 
@@ -144,7 +149,7 @@
 
         .university {
             position: relative;
-            transform: translateY(-110px);
+            transform: translateY(-90px);
 
             margin: 0 0 25px;
 
@@ -155,19 +160,15 @@
             text-transform: uppercase;
         }
 
-        h1,
-        h2 {
-            margin-top: 0;
-            font-family: var(--serif);
-            font-weight: normal;
-            line-height: 1.05;
-        }
-
         /* Ph.D. Candidate */
 
         h1 {
-            margin-bottom: 28px;
+            margin: 0 0 28px;
+
+            font-family: var(--serif);
             font-size: clamp(27px, 2.6vw, 40px);
+            font-weight: normal;
+            line-height: 1.05;
             letter-spacing: -0.02em;
         }
 
@@ -202,196 +203,6 @@
             object-fit: cover;
         }
 
-        /* About Me */
-
-        .about {
-            display: grid;
-            grid-template-columns: 1fr 3fr;
-            gap: 55px;
-
-            padding: 110px 9%;
-
-            color: var(--light-background);
-            background-color: var(--dark);
-        }
-
-        .section-number {
-            margin: 0;
-
-            color: var(--background);
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-        }
-
-        .about-content {
-            max-width: 950px;
-        }
-
-        h2 {
-            margin-bottom: 35px;
-            font-size: clamp(55px, 8vw, 110px);
-            letter-spacing: -0.04em;
-        }
-
-        .large-text {
-            margin-top: 0;
-
-            font-family: var(--serif);
-            font-size: clamp(26px, 3.5vw, 45px);
-            line-height: 1.25;
-        }
-
-        .about-content p:not(.large-text) {
-            max-width: 800px;
-            font-size: 16px;
-        }
-
-        /* Research interests */
-
-        .research-interests {
-            padding: 110px 9%;
-            background-color: var(--light-background);
-        }
-
-        .section-heading {
-            display: flex;
-            gap: 30px;
-            align-items: baseline;
-            margin-bottom: 60px;
-        }
-
-        .section-heading .section-number {
-            color: var(--accent);
-        }
-
-        .section-heading h2 {
-            margin: 0;
-        }
-
-        .research-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            border-top: 1px solid var(--line);
-            border-bottom: 1px solid var(--line);
-        }
-
-        .research-card {
-            min-height: 300px;
-            padding: 35px;
-            border-right: 1px solid var(--line);
-        }
-
-        .research-card:last-child {
-            border-right: none;
-        }
-
-        .research-letter {
-            margin-top: 0;
-
-            color: var(--accent);
-            font-family: var(--serif);
-            font-size: 38px;
-        }
-
-        .research-card h3 {
-            margin-bottom: 15px;
-
-            font-family: var(--serif);
-            font-size: 29px;
-            font-weight: normal;
-            line-height: 1.15;
-        }
-
-        /* Technical expertise */
-
-        .expertise {
-            padding: 100px 9%;
-            background-color: var(--background);
-        }
-
-        .expertise h2 {
-            margin-bottom: 45px;
-            font-size: clamp(50px, 7vw, 95px);
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .skills span {
-            padding: 9px 17px;
-            border: 1px solid var(--line);
-            border-radius: 50px;
-            font-size: 13px;
-        }
-
-        /* Contact */
-
-        .contact-preview {
-            padding: 110px 9%;
-
-            color: var(--light-background);
-            background-color: var(--dark);
-            text-align: center;
-        }
-
-        .contact-preview h2 {
-            margin-bottom: 25px;
-        }
-
-        .contact-preview p {
-            max-width: 650px;
-            margin: 0 auto 30px;
-
-            font-family: Georgia, serif;
-            font-size: 19px;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 12px 22px;
-
-            color: var(--dark);
-            background-color: var(--light-background);
-            border: 1px solid var(--light-background);
-
-            font-size: 13px;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .button:hover {
-            color: white;
-            background-color: var(--accent);
-            border-color: var(--accent);
-        }
-
-        /* Footer */
-
-        footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            padding: 22px 6%;
-
-            color: var(--light-background);
-            background-color: #24211f;
-            font-size: 13px;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        footer a {
-            text-decoration: none;
-        }
-
         /* Tablet */
 
         @media (max-width: 1050px) {
@@ -411,7 +222,7 @@
                 gap: 0;
 
                 padding: 10px 25px 25px;
-                background-color: var(--light-background);
+                background-color: var(--navigation-background);
                 border-bottom: 1px solid var(--line);
             }
 
@@ -427,7 +238,7 @@
             .hero {
                 grid-template-columns: 1fr;
                 min-height: auto;
-                padding: 90px 7%;
+                padding: 70px 7%;
             }
 
             .hero-name,
@@ -447,24 +258,6 @@
                 width: min(75vw, 390px);
                 justify-self: center;
                 transform: none;
-            }
-
-            .about {
-                grid-template-columns: 1fr;
-            }
-
-            .research-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .research-card {
-                min-height: auto;
-                border-right: none;
-                border-bottom: 1px solid var(--line);
-            }
-
-            .research-card:last-child {
-                border-bottom: none;
             }
         }
 
@@ -486,23 +279,6 @@
             h1 {
                 font-size: 27px;
             }
-
-            .about,
-            .research-interests,
-            .expertise,
-            .contact-preview {
-                padding: 75px 25px;
-            }
-
-            .section-heading {
-                display: block;
-            }
-
-            footer {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
         }
     </style>
 </head>
@@ -520,7 +296,8 @@
 
         <nav id="main-navigation">
 
-            <a class="active" href="index.html">
+            <a class="active"
+               href="index.html">
                 About Me
             </a>
 
@@ -596,186 +373,7 @@
 
         </section>
 
-        <section class="about" id="about">
-
-            <p class="section-number">
-                01 / About Me
-            </p>
-
-            <div class="about-content">
-
-                <h2>
-                    About Me
-                </h2>
-
-                <p class="large-text">
-                    I am a Ph.D. candidate in Integrative Physiology
-                    at the University of Colorado Boulder.
-                </p>
-
-                <p>
-                    My research applies machine learning, deep learning,
-                    physiological signal processing, and computational
-                    modeling to the study of human movement and
-                    neuromuscular control. I work with biomedical and
-                    physiological signals including electromyography
-                    (EMG), motor-unit activity, center of pressure (CoP),
-                    force, and inertial-sensor data.
-                </p>
-
-                <p>
-                    My ongoing research examines visual biofeedback during
-                    balance tasks and muscle activation during standing
-                    balance with and without visual feedback. I have also
-                    contributed to clinical research investigating the use
-                    of transcutaneous electrical nerve stimulation (TENS)
-                    in individuals with multiple sclerosis.
-                </p>
-
-                <p>
-                    Before beginning my doctoral studies, I studied
-                    Biomedical Engineering at Amirkabir University of
-                    Technology and worked as a Research and Development
-                    Engineer on biomedical stimulation systems.
-                </p>
-
-            </div>
-
-        </section>
-
-        <section class="research-interests">
-
-            <div class="section-heading">
-
-                <p class="section-number">
-                    02
-                </p>
-
-                <h2>
-                    Research Interests
-                </h2>
-
-            </div>
-
-            <div class="research-grid">
-
-                <article class="research-card">
-
-                    <p class="research-letter">
-                        A
-                    </p>
-
-                    <h3>
-                        Balance and visual feedback
-                    </h3>
-
-                    <p>
-                        Investigating visual biofeedback and muscle
-                        activation during standing balance tasks with
-                        and without visual feedback.
-                    </p>
-
-                </article>
-
-                <article class="research-card">
-
-                    <p class="research-letter">
-                        B
-                    </p>
-
-                    <h3>
-                        Physiological signal analysis
-                    </h3>
-
-                    <p>
-                        Analyzing EMG, motor-unit, CoP, force, and IMU
-                        signals using computational and statistical
-                        methods.
-                    </p>
-
-                </article>
-
-                <article class="research-card">
-
-                    <p class="research-letter">
-                        C
-                    </p>
-
-                    <h3>
-                        Machine learning and digital health
-                    </h3>
-
-                    <p>
-                        Developing machine-learning and deep-learning
-                        approaches for biomedical data analysis,
-                        wearable sensing, and neurorehabilitation.
-                    </p>
-
-                </article>
-
-            </div>
-
-        </section>
-
-        <section class="expertise">
-
-            <h2>
-                Technical Expertise
-            </h2>
-
-            <div class="skills">
-                <span>MATLAB</span>
-                <span>Python</span>
-                <span>Machine Learning</span>
-                <span>Deep Learning</span>
-                <span>Statistical Analysis</span>
-                <span>EMG</span>
-                <span>Motor Units</span>
-                <span>Center of Pressure</span>
-                <span>Force Sensors</span>
-                <span>Wearable Sensors</span>
-                <span>IMU</span>
-                <span>TENS</span>
-                <span>TensorFlow</span>
-                <span>PyTorch</span>
-                <span>Scikit-learn</span>
-            </div>
-
-        </section>
-
-        <section class="contact-preview">
-
-            <h2>
-                Let’s Connect
-            </h2>
-
-            <p>
-                I welcome conversations about neurophysiology,
-                biomedical signal processing, machine learning,
-                digital health, and collaborative research.
-            </p>
-
-            <a class="button" href="contact.html">
-                Contact Me
-            </a>
-
-        </section>
-
     </main>
-
-    <footer>
-
-        <p>
-            &copy;
-            <span id="current-year">2026</span>
-            Negar Rahimi
-        </p>
-
-        <a href="mailto:Negar.Rahimi@colorado.edu">
-            Negar.Rahimi@colorado.edu
-        </a>
-
-    </footer>
 
     <script>
         const menuButton =
@@ -804,9 +402,6 @@
                 );
             });
         });
-
-        document.querySelector("#current-year").textContent =
-            new Date().getFullYear();
     </script>
 
 </body>
