@@ -20,12 +20,12 @@
           crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Caslon+Display&family=Playfair+Display:wght@500;600&display=swap"
-      rel="stylesheet">
+          rel="stylesheet">
 
     <style>
         :root {
             --background: #c4b09e;
-            --navigation-background: #ede4dc;
+            --light-background: #ede4dc;
             --dark: #302d2a;
             --accent: #704b3a;
             --line: rgba(48, 45, 42, 0.25);
@@ -38,13 +38,16 @@
             box-sizing: border-box;
         }
 
-        html,
-        body {
-            margin: 0;
+        html {
             min-height: 100%;
+            overflow-y: auto;
+            scroll-behavior: smooth;
         }
 
         body {
+            margin: 0;
+            min-height: 100%;
+
             color: var(--dark);
             background-color: var(--background);
             font-family: var(--sans);
@@ -68,9 +71,9 @@
 
             width: 100%;
             min-height: 72px;
-            padding: 0 28px;
+            padding: 0 18px;
 
-            background-color: var(--navigation-background);
+            background-color: var(--light-background);
             border-bottom: 1px solid var(--line);
         }
 
@@ -78,10 +81,11 @@
             display: flex;
             justify-content: flex-start;
             align-items: center;
+            flex-wrap: wrap;
 
             gap: 30px;
             margin: 0;
-            padding: 0;
+            padding: 18px 0;
         }
 
         nav a {
@@ -100,20 +104,7 @@
             border-bottom: 1px solid var(--accent);
         }
 
-        .menu-button {
-            display: none;
-            padding: 8px 12px;
-
-            color: var(--dark);
-            background: transparent;
-            border: 1px solid var(--dark);
-
-            font-family: var(--sans);
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        /* Homepage */
+        /* Homepage introduction */
 
         .hero {
             display: grid;
@@ -123,7 +114,7 @@
 
             min-height: calc(100vh - 72px);
             gap: clamp(45px, 6vw, 100px);
-            padding: 70px 4%;
+            padding: 105px 4% 80px;
         }
 
         .hero-text {
@@ -134,7 +125,7 @@
 
         .hero-name {
             position: relative;
-            transform: translateY(-90px);
+            transform: translateY(-35px);
 
             margin: 0 0 12px;
 
@@ -149,7 +140,7 @@
 
         .university {
             position: relative;
-            transform: translateY(-90px);
+            transform: translateY(-35px);
 
             margin: 0 0 25px;
 
@@ -173,7 +164,7 @@
         }
 
         .introduction {
-            max-width: 850px;
+            max-width: 900px;
             margin: 0;
 
             font-family: Georgia, serif;
@@ -203,42 +194,95 @@
             object-fit: cover;
         }
 
+        /* Technical Expertise */
+
+        .expertise {
+            padding: 100px 6% 120px;
+
+            background-color: var(--light-background);
+            border-top: 1px solid var(--line);
+        }
+
+        .expertise h2 {
+            margin: 0 0 55px;
+
+            font-family: var(--serif);
+            font-size: clamp(55px, 8vw, 110px);
+            font-weight: normal;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+
+            max-width: 1500px;
+        }
+
+        .skills span {
+            padding: 10px 18px;
+
+            border: 1px solid var(--line);
+            border-radius: 50px;
+
+            font-size: 14px;
+        }
+
+        .skills span:hover {
+            color: var(--light-background);
+            background-color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* Footer */
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 22px 6%;
+
+            color: var(--light-background);
+            background-color: var(--dark);
+
+            font-size: 13px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer a {
+            color: var(--light-background);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--background);
+        }
+
         /* Tablet */
 
         @media (max-width: 1050px) {
-            .menu-button {
-                display: block;
+            header {
+                position: relative;
             }
 
             nav {
-                position: absolute;
-                top: 72px;
-                right: 0;
-                left: 0;
-
-                display: none;
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0;
-
-                padding: 10px 25px 25px;
-                background-color: var(--navigation-background);
-                border-bottom: 1px solid var(--line);
-            }
-
-            nav.open {
-                display: flex;
+                gap: 20px;
             }
 
             nav a {
-                padding: 13px 0;
-                border-bottom: 1px solid var(--line);
+                font-size: 14px;
             }
 
             .hero {
                 grid-template-columns: 1fr;
                 min-height: auto;
-                padding: 70px 7%;
+                padding: 80px 7%;
             }
 
             .hero-name,
@@ -265,11 +309,20 @@
 
         @media (max-width: 550px) {
             header {
-                padding: 0 25px;
+                padding: 0 20px;
+            }
+
+            nav {
+                gap: 12px 18px;
+                padding: 15px 0;
+            }
+
+            nav a {
+                font-size: 13px;
             }
 
             .hero {
-                padding: 55px 25px 70px;
+                padding: 60px 25px 75px;
             }
 
             .hero-name {
@@ -279,58 +332,31 @@
             h1 {
                 font-size: 27px;
             }
-        }
 
-                /* Footer */
+            .expertise {
+                padding: 75px 25px;
+            }
 
-        footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            .expertise h2 {
+                font-size: 52px;
+            }
 
-            padding: 22px 6%;
-
-            color: var(--navigation-background);
-            background-color: var(--dark);
-            font-size: 13px;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        footer a {
-            color: var(--navigation-background);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: var(--background);
-        }
-
-        @media (max-width: 550px) {
             footer {
                 flex-direction: column;
                 gap: 10px;
                 text-align: center;
             }
         }
-        
     </style>
 </head>
 
 <body>
 
+    <!-- Navigation -->
+
     <header>
 
-        <button class="menu-button"
-                type="button"
-                aria-expanded="false"
-                aria-controls="main-navigation">
-            Menu
-        </button>
-
-        <nav id="main-navigation">
+        <nav>
 
             <a class="active"
                href="index.html">
@@ -371,6 +397,8 @@
 
     <main>
 
+        <!-- Homepage introduction -->
+
         <section class="hero">
 
             <div class="hero-text">
@@ -409,13 +437,51 @@
 
         </section>
 
+        <!-- Technical Expertise -->
+
+        <section class="expertise">
+
+            <h2>
+                Technical Expertise
+            </h2>
+
+            <div class="skills">
+
+                <span>MATLAB</span>
+                <span>Python</span>
+                <span>Machine Learning</span>
+                <span>Deep Learning</span>
+                <span>Statistical Analysis</span>
+                <span>Computational Modeling</span>
+                <span>Electromyography</span>
+                <span>Motor Units</span>
+                <span>Center of Pressure</span>
+                <span>Force Sensors</span>
+                <span>Wearable Sensors</span>
+                <span>IMU</span>
+                <span>TENS</span>
+                <span>NMES</span>
+                <span>TensorFlow</span>
+                <span>PyTorch</span>
+                <span>Scikit-learn</span>
+                <span>MATLAB Simulink</span>
+                <span>C/C++</span>
+                <span>Experimental Design</span>
+                <span>Clinical Research</span>
+                <span>Data Collection</span>
+
+            </div>
+
+        </section>
+
     </main>
+
+    <!-- Footer -->
+
     <footer>
 
         <p>
-            &copy;
-            <span id="current-year">2026</span>
-            Negar Rahimi
+            &copy; 2026 Negar Rahimi
         </p>
 
         <a href="mailto:Negar.Rahimi@colorado.edu">
@@ -423,36 +489,6 @@
         </a>
 
     </footer>
-    document.querySelector("#current-year").textContent =
-    new Date().getFullYear();
-    <script>
-        const menuButton =
-            document.querySelector(".menu-button");
-
-        const navigation =
-            document.querySelector("#main-navigation");
-
-        menuButton.addEventListener("click", function () {
-            const menuIsOpen =
-                navigation.classList.toggle("open");
-
-            menuButton.setAttribute(
-                "aria-expanded",
-                menuIsOpen
-            );
-        });
-
-        navigation.querySelectorAll("a").forEach(function (link) {
-            link.addEventListener("click", function () {
-                navigation.classList.remove("open");
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-            });
-        });
-    </script>
 
 </body>
 
