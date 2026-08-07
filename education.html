@@ -105,7 +105,7 @@
             border-bottom: 1px solid var(--accent);
         }
 
-        /* Main page */
+        /* Main page sizing */
 
         main {
             flex: 1;
@@ -120,14 +120,14 @@
             flex: 1;
 
             width: 100%;
-            padding: 40px 3.5% 50px;
+            padding: 32px 3.5% 38px;
         }
 
         .page-title {
-            margin: 0 0 42px;
+            margin: 0 0 32px;
 
             font-family: var(--serif);
-            font-size: clamp(55px, 6vw, 90px);
+            font-size: clamp(52px, 5vw, 76px);
             font-weight: normal;
             line-height: 1;
             letter-spacing: -0.04em;
@@ -137,14 +137,14 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
 
-            gap: clamp(50px, 7vw, 120px);
+            gap: clamp(50px, 6vw, 100px);
             width: 100%;
         }
 
         .education-column {
             display: flex;
             flex-direction: column;
-            gap: 55px;
+            gap: 42px;
         }
 
         .degree {
@@ -154,11 +154,11 @@
         .degree-title {
             display: inline-block;
 
-            margin: 0 0 18px;
-            padding-bottom: 5px;
+            margin: 0 0 14px;
+            padding-bottom: 4px;
 
             font-family: Georgia, serif;
-            font-size: clamp(25px, 2.2vw, 36px);
+            font-size: clamp(23px, 2vw, 32px);
             font-style: italic;
             font-weight: 600;
             line-height: 1.25;
@@ -167,7 +167,7 @@
         }
 
         .degree-date {
-            margin: 0 0 9px;
+            margin: 0 0 8px;
 
             color: var(--accent);
             font-size: 12px;
@@ -177,7 +177,7 @@
         }
 
         .institution {
-            margin: 0 0 16px;
+            margin: 0 0 13px;
 
             font-size: 14px;
             font-weight: 500;
@@ -192,12 +192,33 @@
             margin: 0;
 
             font-family: Georgia, serif;
-            font-size: clamp(17px, 1.3vw, 21px);
-            line-height: 1.55;
+            font-size: clamp(16px, 1.15vw, 19px);
+            line-height: 1.5;
         }
 
         .thesis-label {
             font-weight: bold;
+        }
+
+        /* Ph.D. description */
+
+        .degree-description {
+            margin-top: 18px;
+            padding-top: 16px;
+
+            border-top: 1px solid var(--line);
+        }
+
+        .degree-description p {
+            margin: 0 0 11px;
+
+            font-family: Georgia, serif;
+            font-size: clamp(14px, 1vw, 17px);
+            line-height: 1.5;
+        }
+
+        .degree-description p:last-child {
+            margin-bottom: 0;
         }
 
         /* Footer */
@@ -232,6 +253,34 @@
             color: var(--background);
         }
 
+        /* Short desktop screens */
+
+        @media (min-width: 1051px) and (max-height: 800px) {
+            .education-page {
+                padding-top: 24px;
+                padding-bottom: 28px;
+            }
+
+            .page-title {
+                margin-bottom: 24px;
+                font-size: 60px;
+            }
+
+            .education-column {
+                gap: 30px;
+            }
+
+            .degree-title {
+                font-size: 25px;
+            }
+
+            .degree-description p {
+                margin-bottom: 8px;
+                font-size: 14px;
+                line-height: 1.4;
+            }
+        }
+
         /* Tablet */
 
         @media (max-width: 1050px) {
@@ -248,20 +297,16 @@
             }
 
             .education-page {
-                padding: 50px 5% 65px;
+                padding: 45px 5% 60px;
             }
 
             .education-grid {
                 grid-template-columns: 1fr;
-                gap: 50px;
+                gap: 45px;
             }
 
             .education-column {
-                gap: 50px;
-            }
-
-            .page-title {
-                margin-bottom: 45px;
+                gap: 45px;
             }
         }
 
@@ -282,25 +327,30 @@
             }
 
             .education-page {
-                padding: 45px 25px 60px;
+                padding: 40px 25px 55px;
             }
 
             .page-title {
-                margin-bottom: 40px;
+                margin-bottom: 38px;
                 font-size: 52px;
             }
 
             .education-grid,
             .education-column {
-                gap: 45px;
+                gap: 42px;
             }
 
             .degree-title {
-                font-size: 25px;
+                font-size: 24px;
             }
 
             .thesis {
                 font-size: 17px;
+            }
+
+            .degree-description p {
+                font-size: 16px;
+                line-height: 1.55;
             }
 
             footer {
@@ -392,6 +442,40 @@
                             <span class="thesis-label">Thesis:</span>
                             Balance control during quiet standing.
                         </p>
+
+                        <div class="degree-description">
+
+                            <p>
+                                My Ph.D. research involves applying machine
+                                learning, deep learning, and computational
+                                modeling to analyze biomedical and physiological
+                                signals, including electromyography (EMG) and
+                                center of pressure (CoP).
+                            </p>
+
+                            <p>
+                                My ongoing research focuses on visual
+                                biofeedback during balance tasks and muscle
+                                activation during standing balance with and
+                                without visual feedback.
+                            </p>
+
+                            <p>
+                                I also contributed to a project investigating
+                                the use of transcutaneous electrical nerve
+                                stimulation (TENS) in individuals with multiple
+                                sclerosis.
+                            </p>
+
+                            <p>
+                                Beyond academia, I gained valuable industry
+                                experience as a Research and Development
+                                Engineer, developing skills in product
+                                innovation, team coordination, and operational
+                                efficiency.
+                            </p>
+
+                        </div>
 
                     </article>
 
