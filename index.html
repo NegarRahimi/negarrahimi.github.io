@@ -8,7 +8,7 @@
           content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Academic website of Negar Rahimi, Ph.D. candidate in Integrative Physiology at the University of Colorado Boulder.">
+          content="Academic website of Negar Rahimi, Ph.D. candidate at the University of Colorado Boulder.">
 
     <title>Negar Rahimi | About Me</title>
 
@@ -53,7 +53,7 @@
             color: inherit;
         }
 
-        /* Navigation */
+        /* Navigation bar */
 
         header {
             position: sticky;
@@ -64,20 +64,23 @@
             justify-content: flex-start;
             align-items: center;
 
-            min-height: 74px;
+            width: 100%;
+            min-height: 72px;
             padding: 0 4%;
 
-            background-color: rgba(237, 228, 220, 0.98);
+            background-color: #ede4dc;
             border-bottom: 1px solid var(--line);
-            backdrop-filter: blur(12px);
         }
 
         nav {
+            position: static;
             display: flex;
             justify-content: flex-start;
             align-items: center;
+
             gap: 27px;
             margin: 0;
+            padding: 0;
         }
 
         nav a {
@@ -114,10 +117,10 @@
         .hero {
             display: grid;
             grid-template-columns: minmax(420px, 1.2fr)
-                                   minmax(260px, 0.8fr);
+                                   minmax(280px, 0.8fr);
             align-items: center;
 
-            min-height: calc(100vh - 74px);
+            min-height: calc(100vh - 72px);
             gap: clamp(55px, 8vw, 140px);
             padding: 80px 4%;
         }
@@ -126,15 +129,13 @@
             max-width: 850px;
         }
 
-        /* Name */
-
         .hero-name {
             margin: 0 0 12px;
 
-            font-family: var(--sans);
-            font-size: clamp(42px, 4.5vw, 68px);
-            font-weight: 600;
-            line-height: 1.05;
+            font-family: var(--serif);
+            font-size: clamp(48px, 5vw, 72px);
+            font-weight: normal;
+            line-height: 1;
             letter-spacing: -0.04em;
         }
 
@@ -156,12 +157,12 @@
             line-height: 1.05;
         }
 
-        /* Ph.D. Candidate */
+        /* Smaller Ph.D. Candidate */
 
         h1 {
-            margin-bottom: 28px;
-            font-size: clamp(34px, 3.5vw, 52px);
-            letter-spacing: -0.03em;
+            margin-bottom: 27px;
+            font-size: clamp(27px, 2.6vw, 40px);
+            letter-spacing: -0.02em;
         }
 
         .introduction {
@@ -193,7 +194,7 @@
             object-fit: cover;
         }
 
-        /* About section */
+        /* About Me */
 
         .about {
             display: grid;
@@ -280,6 +281,7 @@
 
         .research-letter {
             margin-top: 0;
+
             color: var(--accent);
             font-family: var(--serif);
             font-size: 38px;
@@ -287,13 +289,14 @@
 
         .research-card h3 {
             margin-bottom: 15px;
+
             font-family: var(--serif);
             font-size: 29px;
             font-weight: normal;
             line-height: 1.15;
         }
 
-        /* Expertise */
+        /* Technical expertise */
 
         .expertise {
             padding: 100px 9%;
@@ -322,6 +325,7 @@
 
         .contact-preview {
             padding: 110px 9%;
+
             color: var(--light-background);
             background-color: var(--dark);
             text-align: center;
@@ -381,10 +385,6 @@
             text-decoration: none;
         }
 
-        footer a:hover {
-            color: var(--background);
-        }
-
         /* Tablet and mobile */
 
         @media (max-width: 1050px) {
@@ -398,7 +398,7 @@
 
             nav {
                 position: absolute;
-                top: 74px;
+                top: 72px;
                 right: 0;
                 left: 0;
 
@@ -427,16 +427,12 @@
                 padding: 65px 7%;
             }
 
-            .hero-text {
-                text-align: left;
-            }
-
             .hero-name {
-                font-size: clamp(40px, 10vw, 60px);
+                font-size: clamp(44px, 11vw, 62px);
             }
 
             h1 {
-                font-size: clamp(32px, 8vw, 45px);
+                font-size: clamp(26px, 6vw, 35px);
             }
 
             .photo-container {
@@ -473,11 +469,11 @@
             }
 
             .hero-name {
-                font-size: 40px;
+                font-size: 43px;
             }
 
             h1 {
-                font-size: 32px;
+                font-size: 27px;
             }
 
             .about,
@@ -514,6 +510,7 @@
         </button>
 
         <nav id="main-navigation">
+
             <a class="active"
                href="index.html">
                 About Me
@@ -546,6 +543,7 @@
             <a href="contact.html">
                 Contact
             </a>
+
         </nav>
 
     </header>
@@ -775,9 +773,7 @@
 
         <p>
             &copy;
-            <span id="current-year">
-                2026
-            </span>
+            <span id="current-year">2026</span>
             Negar Rahimi
         </p>
 
