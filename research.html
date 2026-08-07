@@ -273,6 +273,52 @@
                 text-align: center;
             }
         }
+
+        /* Fit research text and expertise within one desktop screen */
+
+.research-page {
+    display: block;
+    min-height: auto;
+    padding: 28px 2.5% 22px;
+}
+
+.research-text p {
+    margin: 0 0 13px;
+
+    font-family: Georgia, serif;
+    font-size: clamp(15px, 1.05vw, 18px);
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.research-text p:last-child {
+    margin-bottom: 0;
+}
+
+.expertise {
+    min-height: auto;
+    padding: 25px 2.5% 30px;
+}
+
+.expertise h1 {
+    margin: 0 0 18px;
+    font-size: clamp(38px, 4vw, 58px);
+}
+
+.skills {
+    gap: 8px;
+}
+
+.skills span {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+footer {
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+        
     </style>
 </head>
 
