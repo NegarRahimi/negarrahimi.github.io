@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Research background and technical expertise of Negar Rahimi.">
+
+    <title>Negar Rahimi | Research</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Caslon+Display&family=Playfair+Display:wght@500;600&display=swap"
+          rel="stylesheet">
+
+    <style>
+        :root {
+            --background: #c4b09e;
+            --light-background: #ede4dc;
+            --dark: #302d2a;
+            --accent: #704b3a;
+            --line: rgba(48, 45, 42, 0.25);
+            --serif: "Libre Caslon Display", Georgia, serif;
+            --name-font: "Playfair Display", Georgia, serif;
+            --sans: "DM Sans", Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            color: var(--dark);
+            background-color: var(--background);
+            font-family: var(--sans);
+            line-height: 1.75;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        /* Navigation */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            width: 100%;
+            min-height: 72px;
+            padding: 0 28px;
+
+            background-color: var(--light-background);
+            border-bottom: 1px solid var(--line);
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--accent);
+        }
+
+        nav a.active {
+            border-bottom: 1px solid var(--accent);
+        }
+
+        .menu-button {
+            display: none;
+            padding: 8px 12px;
+
+            color: var(--dark);
+            background: transparent;
+            border: 1px solid var(--dark);
+
+            font-family: var(--sans);
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* Research introduction */
+
+        .research-introduction {
+            display: grid;
+            grid-template-columns: 0.65fr 1.35fr;
+            gap: clamp(50px, 8vw, 130px);
+
+            padding: 110px 6% 120px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .page-label {
+            margin: 10px 0 0;
+
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .research-content {
+            max-width: 930px;
+        }
+
+        h1,
+        h2 {
+            margin-top: 0;
+            font-family: var(--serif);
+            font-weight: normal;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+        }
+
+        h1 {
+            margin-bottom: 55px;
+            font-size: clamp(65px, 10vw, 145px);
+        }
+
+        .lead {
+            margin: 0 0 38px;
+
+            font-family: Georgia, serif;
+            font-size: clamp(23px, 3vw, 38px);
+            font-style: italic;
+            line-height: 1.45;
+        }
+
+        .research-content p:not(.lead) {
+            max-width: 820px;
+            margin: 0 0 24px;
+            font-size: 17px;
+        }
+
+        /* Current research */
+
+        .current-research {
+            padding: 110px 6%;
+            color: var(--light-background);
+            background-color: var(--dark);
+        }
+
+        .current-research .page-label {
+            color: var(--background);
+        }
+
+        .current-research h2 {
+            margin-bottom: 55px;
+            font-size: clamp(55px, 8vw, 110px);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid rgba(237, 228, 220, 0.3);
+            border-bottom: 1px solid rgba(237, 228, 220, 0.3);
+        }
+
+        .project {
+            min-height: 310px;
+            padding: 35px;
+            border-right: 1px solid rgba(237, 228, 220, 0.3);
+        }
+
+        .project:last-child {
+            border-right: none;
+        }
+
+        .project-number {
+            margin: 0 0 35px;
+
+            color: var(--background);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+        }
+
+        .project h3 {
+            margin: 0 0 20px;
+
+            font-family: var(--serif);
+            font-size: 32px;
+            font-weight: normal;
+            line-height: 1.2;
+        }
+
+        .project p {
+            margin: 0;
+            color: #ddd2c8;
+            font-size: 15px;
+        }
+
+        /* Technical expertise */
+
+        .expertise {
+            padding: 110px 6% 130px;
+            background-color: var(--background);
+        }
+
+        .expertise h2 {
+            margin-bottom: 55px;
+            font-size: clamp(55px, 8vw, 110px);
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            max-width: 1500px;
+        }
+
+        .skills span {
+            padding: 10px 18px;
+            border: 1px solid var(--line);
+            border-radius: 50px;
+            font-size: 14px;
+        }
+
+        .skills span:hover {
+            color: var(--light-background);
+            background-color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* Footer */
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 22px 6%;
+
+            color: var(--light-background);
+            background-color: #24211f;
+            font-size: 13px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer a {
+            text-decoration: none;
+        }
+
+        /* Tablet */
+
+        @media (max-width: 1050px) {
+            .menu-button {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+                top: 72px;
+                right: 0;
+                left: 0;
+
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+
+                padding: 10px 25px 25px;
+                background-color: var(--light-background);
+                border-bottom: 1px solid var(--line);
+            }
+
+            nav.open {
+                display: flex;
+            }
+
+            nav a {
+                padding: 13px 0;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .research-introduction {
+                grid-template-columns: 1fr;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project {
+                min-height: auto;
+                border-right: none;
+                border-bottom: 1px solid rgba(237, 228, 220, 0.3);
+            }
+
+            .project:last-child {
+                border-bottom: none;
+            }
+        }
+
+        /* Phone */
+
+        @media (max-width: 550px) {
+            header {
+                padding: 0 25px;
+            }
+
+            .research-introduction,
+            .current-research,
+            .expertise {
+                padding: 75px 25px;
+            }
+
+            h1 {
+                font-size: 62px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <button class="menu-button"
+                type="button"
+                aria-expanded="false"
+                aria-controls="main-navigation">
+            Menu
+        </button>
+
+        <nav id="main-navigation">
+
+            <a href="index.html">
+                About Me
+            </a>
+
+            <a class="active"
+               href="research.html">
+                Research
+            </a>
+
+            <a href="education.html">
+                Education
+            </a>
+
+            <a href="publications.html">
+                Publications
+            </a>
+
+            <a href="experience.html">
+                Experience
+            </a>
+
+            <a href="service.html">
+                Service &amp; Engagement
+            </a>
+
+            <a href="cv.html">
+                CV
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <!-- Research background -->
+
+        <section class="research-introduction">
+
+            <p class="page-label">
+                Research profile
+            </p>
+
+            <div class="research-content">
+
+                <h1>
+                    Research
+                </h1>
+
+                <p class="lead">
+                    I study human balance and movement using
+                    neurophysiology, biomedical signal processing,
+                    computational modeling, and machine learning.
+                </p>
+
+                <p>
+                    I am currently pursuing my Ph.D. in the
+                    Neurophysiology of Movement Lab at the University
+                    of Colorado Boulder. My research uses machine
+                    learning, deep learning, and computational modeling
+                    to analyze biomedical and physiological signals,
+                    including electromyography (EMG) and center of
+                    pressure (CoP).
+                </p>
+
+                <p>
+                    My ongoing research investigates how visual
+                    biofeedback influences balance control and muscle
+                    activation during standing tasks performed with
+                    and without visual feedback.
+                </p>
+
+                <p>
+                    I have also contributed to a project investigating
+                    the effects of transcutaneous electrical nerve
+                    stimulation (TENS) in individuals with multiple
+                    sclerosis.
+                </p>
+
+                <p>
+                    Before beginning my Ph.D., I completed my M.Sc. and
+                    B.Sc. degrees in Biomedical Engineering at Amirkabir
+                    University of Technology. My master’s research
+                    involved modeling the effects of visual deprivation
+                    during treadmill walking, while my bachelor’s
+                    research involved analyzing anti-saccade
+                    eye-movement reaction times using a custom-designed
+                    user interface.
+                </p>
+
+                <p>
+                    In addition to my academic experience, I worked as
+                    a Research and Development Engineer, where I
+                    developed skills in product development and
+                    innovation, team coordination, and operational
+                    efficiency.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Main research areas -->
+
+        <section class="current-research">
+
+            <p class="page-label">
+                Current and previous work
+            </p>
+
+            <h2>
+                Research Areas
+            </h2>
+
+            <div class="project-grid">
+
+                <article class="project">
+
+                    <p class="project-number">
+                        01 / CURRENT
+                    </p>
+
+                    <h3>
+                        Visual biofeedback and balance
+                    </h3>
+
+                    <p>
+                        Investigating the effects of visual biofeedback
+                        on postural control and muscle activation during
+                        standing balance tasks.
+                    </p>
+
+                </article>
+
+                <article class="project">
+
+                    <p class="project-number">
+                        02 / CLINICAL
+                    </p>
+
+                    <h3>
+                        TENS and multiple sclerosis
+                    </h3>
+
+                    <p>
+                        Contributing to clinical research examining the
+                        effects of TENS on neuromuscular function and
+                        physical performance in individuals with
+                        multiple sclerosis.
+                    </p>
+
+                </article>
+
+                <article class="project">
+
+                    <p class="project-number">
+                        03 / PREVIOUS
+                    </p>
+
+                    <h3>
+                        Vision, gait, and eye movements
+                    </h3>
+
+                    <p>
+                        Modeling visual deprivation during treadmill
+                        walking and analyzing anti-saccade
+                        eye-movement reaction times.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- Technical expertise -->
+
+        <section class="expertise">
+
+            <p class="page-label">
+                Methods and tools
+            </p>
+
+            <h2>
+                Technical Expertise
+            </h2>
+
+            <div class="skills">
+
+                <span>MATLAB</span>
+                <span>Python</span>
+                <span>Machine Learning</span>
+                <span>Deep Learning</span>
+                <span>Statistical Analysis</span>
+                <span>Computational Modeling</span>
+                <span>Electromyography</span>
+                <span>Motor Units</span>
+                <span>Center of Pressure</span>
+                <span>Force Sensors</span>
+                <span>Wearable Sensors</span>
+                <span>IMU</span>
+                <span>TENS</span>
+                <span>NMES</span>
+                <span>TensorFlow</span>
+                <span>PyTorch</span>
+                <span>Scikit-learn</span>
+                <span>MATLAB Simulink</span>
+                <span>C/C++</span>
+                <span>Clinical Research</span>
+                <span>Experimental Design</span>
+                <span>Data Collection</span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>
+            &copy;
+            <span id="current-year">2026</span>
+            Negar Rahimi
+        </p>
+
+        <a href="mailto:Negar.Rahimi@colorado.edu">
+            Negar.Rahimi@colorado.edu
+        </a>
+
+    </footer>
+
+    <script>
+        const menuButton =
+            document.querySelector(".menu-button");
+
+        const navigation =
+            document.querySelector("#main-navigation");
+
+        menuButton.addEventListener("click", function () {
+            const menuIsOpen =
+                navigation.classList.toggle("open");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                menuIsOpen
+            );
+        });
+
+        navigation.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navigation.classList.remove("open");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            });
+        });
+
+        document.querySelector("#current-year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+
+</html>
