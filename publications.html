@@ -21,7 +21,17 @@
 
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Caslon+Display&display=swap"
           rel="stylesheet">
+/* Smaller publication section titles */
 
+.section-title {
+    font-size: clamp(34px, 3.5vw, 52px);
+}
+
+@media (max-width: 550px) {
+    .section-title {
+        font-size: 35px;
+    }
+}
     <style>
         :root {
             --background: #c4b09e;
