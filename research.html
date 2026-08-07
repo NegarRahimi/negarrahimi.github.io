@@ -118,16 +118,16 @@
 
         .research-page {
             width: 100%;
-            padding: 30px 2.5% 28px;
+            padding: 35px 2.5% 32px;
 
             background-color: var(--background);
         }
 
         .research-heading {
-            margin: 0 0 18px;
+            margin: 0 0 20px;
 
             font-family: var(--serif);
-            font-size: clamp(48px, 4.5vw, 68px);
+            font-size: clamp(52px, 4.5vw, 72px);
             font-weight: normal;
             line-height: 1;
             letter-spacing: -0.04em;
@@ -140,12 +140,12 @@
 
         .research-text p {
             width: 100%;
-            margin: 0 0 15px;
+            margin: 0 0 17px;
 
             font-family: Georgia, serif;
-            font-size: clamp(16px, 1.1vw, 19px);
+            font-size: clamp(17px, 1.15vw, 20px);
             font-style: italic;
-            line-height: 1.55;
+            line-height: 1.65;
             text-align: left;
         }
 
@@ -173,7 +173,7 @@
             margin: 0 0 18px;
 
             font-family: var(--serif);
-            font-size: clamp(38px, 4vw, 58px);
+            font-size: clamp(42px, 4vw, 60px);
             font-weight: normal;
             line-height: 1.05;
             letter-spacing: -0.04em;
@@ -185,7 +185,7 @@
             gap: 8px;
 
             width: 100%;
-            max-width: 1700px;
+            max-width: 1750px;
         }
 
         .skills span {
@@ -225,6 +225,7 @@
             color: var(--light-background);
             background-color: var(--dark);
 
+            font-family: var(--sans);
             font-size: 13px;
         }
 
@@ -242,11 +243,11 @@
         }
 
         /*
-           Fit everything on one normal desktop screen.
-           Smaller devices remain scrollable.
+           Large desktop screens:
+           Fill the page and remove excessive empty space.
         */
 
-        @media (min-width: 1200px) and (min-height: 760px) {
+        @media (min-width: 1500px) and (min-height: 851px) {
             html,
             body {
                 height: 100%;
@@ -263,49 +264,125 @@
 
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                justify-content: flex-start;
 
-                padding: 14px 2.5%;
+                padding: 30px 2.5% 24px;
             }
 
             .research-heading {
-                margin-bottom: 12px;
+                margin-bottom: 18px;
 
-                font-size: clamp(48px, 3.6vw, 60px);
+                font-size: clamp(62px, 4vw, 76px);
             }
 
             .research-text p {
-                margin-bottom: 10px;
+                margin-bottom: 17px;
 
-                font-size: clamp(15px, 0.95vw, 18px);
-                line-height: 1.4;
+                font-size: clamp(18px, 1.1vw, 21px);
+                line-height: 1.7;
+            }
+
+            .research-text p:last-child {
+                margin-bottom: 0;
             }
 
             .expertise {
-                flex: 0 0 190px;
+                flex: 0 0 215px;
                 min-height: 0;
 
-                padding: 15px 2.5%;
+                padding: 20px 2.5%;
+                justify-content: center;
             }
 
             .expertise h2 {
-                margin-bottom: 12px;
+                margin-bottom: 15px;
 
-                font-size: clamp(38px, 3.2vw, 52px);
+                font-size: clamp(44px, 3.5vw, 58px);
             }
 
             .skills {
-                gap: 7px;
+                gap: 8px;
             }
 
             .skills span {
-                padding: 5px 11px;
+                padding: 6px 12px;
                 font-size: 12px;
             }
 
             footer {
                 padding-top: 10px;
                 padding-bottom: 10px;
+            }
+        }
+
+        /*
+           Shorter desktop screens:
+           Use a more compact layout so nothing gets cut off.
+        */
+
+        @media (min-width: 1200px) and (max-height: 850px) {
+            html,
+            body {
+                height: 100%;
+                overflow: hidden;
+            }
+
+            main {
+                min-height: 0;
+            }
+
+            .research-page {
+                flex: 1;
+                min-height: 0;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+
+                padding: 18px 2.5% 14px;
+            }
+
+            .research-heading {
+                margin-bottom: 11px;
+                font-size: 52px;
+            }
+
+            .research-text p {
+                margin-bottom: 9px;
+
+                font-size: clamp(14px, 0.95vw, 17px);
+                line-height: 1.4;
+            }
+
+            .research-text p:last-child {
+                margin-bottom: 0;
+            }
+
+            .expertise {
+                flex: 0 0 180px;
+                min-height: 0;
+
+                padding: 14px 2.5%;
+                justify-content: center;
+            }
+
+            .expertise h2 {
+                margin-bottom: 10px;
+                font-size: 44px;
+            }
+
+            .skills {
+                gap: 6px;
+            }
+
+            .skills span {
+                padding: 5px 10px;
+                font-size: 11px;
+            }
+
+            footer {
+                padding-top: 9px;
+                padding-bottom: 9px;
             }
         }
 
