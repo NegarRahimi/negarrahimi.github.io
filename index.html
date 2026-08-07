@@ -19,7 +19,7 @@
           href="https://fonts.gstatic.com"
           crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Caslon+Display&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&display=swap"
           rel="stylesheet">
 
     <style>
@@ -53,7 +53,7 @@
             color: inherit;
         }
 
-        /* Navigation bar */
+        /* Navigation */
 
         header {
             position: sticky;
@@ -66,29 +66,28 @@
 
             width: 100%;
             min-height: 72px;
-            padding: 0 4%;
+            padding: 0 28px;
 
-            background-color: #ede4dc;
+            background-color: var(--light-background);
             border-bottom: 1px solid var(--line);
         }
 
         nav {
-            position: static;
             display: flex;
             justify-content: flex-start;
             align-items: center;
 
-            gap: 27px;
+            gap: 30px;
             margin: 0;
             padding: 0;
         }
 
-       nav a {
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 0.03em;
-    text-decoration: none;
-}
+        nav a {
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+        }
 
         nav a:hover,
         nav a.active {
@@ -112,34 +111,42 @@
             cursor: pointer;
         }
 
-        /* Main introduction */
+        /* Homepage */
 
         .hero {
             display: grid;
-            grid-template-columns: minmax(420px, 1.2fr)
-                                   minmax(280px, 0.8fr);
+            grid-template-columns: minmax(450px, 1.15fr)
+                                   minmax(300px, 0.85fr);
             align-items: center;
 
             min-height: calc(100vh - 72px);
-            gap: clamp(55px, 8vw, 140px);
-            padding: 80px 4%;
+            gap: clamp(45px, 6vw, 100px);
+            padding: 75px 4%;
         }
 
         .hero-text {
-            max-width: 850px;
+            max-width: 900px;
         }
 
+        /* Negar Rahimi */
+
         .hero-name {
+            position: relative;
+            transform: translateY(-90px);
+
             margin: 0 0 12px;
 
-            font-family: var(--serif);
-            font-size: clamp(48px, 5vw, 72px);
-            font-weight: normal;
-            line-height: 1;
-            letter-spacing: -0.04em;
+            font-family: var(--sans);
+            font-size: clamp(45px, 4.5vw, 68px);
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -0.045em;
         }
 
         .university {
+            position: relative;
+            transform: translateY(-90px);
+
             margin: 0 0 25px;
 
             color: var(--accent);
@@ -157,34 +164,35 @@
             line-height: 1.05;
         }
 
-        /* Smaller Ph.D. Candidate */
-
         h1 {
-            margin-bottom: 27px;
+            margin-bottom: 28px;
             font-size: clamp(27px, 2.6vw, 40px);
             letter-spacing: -0.02em;
         }
 
         .introduction {
-            max-width: 780px;
+            max-width: 850px;
             margin: 0;
 
             font-family: Georgia, serif;
             font-size: clamp(17px, 1.65vw, 22px);
             font-style: italic;
-            line-height: 1.6;
+            line-height: 1.75;
         }
 
         /* Photograph */
 
         .photo-container {
-            width: min(100%, 410px);
+            width: min(100%, 475px);
             aspect-ratio: 4 / 5;
             justify-self: end;
 
             overflow: hidden;
             border-radius: 48% 48% 5px 5px;
             background-color: #ad9886;
+
+            /* Move the photograph left */
+            transform: translateX(-55px);
         }
 
         .profile-photo {
@@ -321,7 +329,7 @@
             font-size: 13px;
         }
 
-        /* Contact preview */
+        /* Contact section */
 
         .contact-preview {
             padding: 110px 9%;
@@ -388,10 +396,6 @@
         /* Tablet and mobile */
 
         @media (max-width: 1050px) {
-            header {
-                justify-content: flex-start;
-            }
-
             .menu-button {
                 display: block;
             }
@@ -424,11 +428,16 @@
             .hero {
                 grid-template-columns: 1fr;
                 min-height: auto;
-                padding: 65px 7%;
+                padding: 90px 7%;
+            }
+
+            .hero-name,
+            .university {
+                transform: none;
             }
 
             .hero-name {
-                font-size: clamp(44px, 11vw, 62px);
+                font-size: clamp(42px, 10vw, 60px);
             }
 
             h1 {
@@ -436,8 +445,9 @@
             }
 
             .photo-container {
-                width: min(75vw, 350px);
+                width: min(75vw, 390px);
                 justify-self: center;
+                transform: none;
             }
 
             .about {
@@ -469,7 +479,7 @@
             }
 
             .hero-name {
-                font-size: 43px;
+                font-size: 40px;
             }
 
             h1 {
@@ -493,32 +503,12 @@
                 text-align: center;
             }
         }
-        
-        .hero-name {
-    font-family: var(--sans) !important;
-    font-size: clamp(44px, 4.5vw, 66px) !important;
-    font-weight: 600 !important;
-    letter-spacing: -0.04em;
-}
-
-.photo-container {
-    transform: translateX(-50px);
-}
-
-@media (max-width: 1050px) {
-    .photo-container {
-        transform: none;
-    }
-}
-        
     </style>
 </head>
 
 <body>
 
-    <!-- Navigation -->
-
-   <header style="justify-content: flex-start;">
+    <header>
 
         <button class="menu-button"
                 type="button"
@@ -527,8 +517,7 @@
             Menu
         </button>
 
-        <nav id="main-navigation"
-             style="margin-left: 0; margin-right: auto; justify-content: flex-start;">
+        <nav id="main-navigation">
 
             <a class="active"
                href="index.html">
@@ -569,8 +558,6 @@
 
     <main>
 
-        <!-- Introduction -->
-
         <section class="hero">
 
             <div class="hero-text">
@@ -608,8 +595,6 @@
             </div>
 
         </section>
-
-        <!-- About Me -->
 
         <section class="about"
                  id="about">
@@ -658,8 +643,6 @@
             </div>
 
         </section>
-
-        <!-- Research interests -->
 
         <section class="research-interests">
 
@@ -735,8 +718,6 @@
 
         </section>
 
-        <!-- Technical expertise -->
-
         <section class="expertise">
 
             <h2>
@@ -763,8 +744,6 @@
 
         </section>
 
-        <!-- Contact preview -->
-
         <section class="contact-preview">
 
             <h2>
@@ -786,8 +765,6 @@
 
     </main>
 
-    <!-- Footer -->
-
     <footer>
 
         <p>
@@ -801,8 +778,6 @@
         </a>
 
     </footer>
-
-    <!-- Mobile navigation -->
 
     <script>
         const menuButton =
