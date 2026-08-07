@@ -37,17 +37,19 @@
             box-sizing: border-box;
         }
 
-        html,
-        body {
-            margin: 0;
+        html {
             min-height: 100%;
+            overflow-y: auto;
+            scroll-behavior: smooth;
         }
 
         body {
+            margin: 0;
+            min-height: 100%;
+
             color: var(--dark);
             background-color: var(--background);
             font-family: var(--sans);
-            line-height: 1.8;
         }
 
         a {
@@ -67,7 +69,7 @@
 
             width: 100%;
             min-height: 72px;
-            padding: 0 28px;
+            padding: 0 18px;
 
             background-color: var(--light-background);
             border-bottom: 1px solid var(--line);
@@ -77,10 +79,11 @@
             display: flex;
             justify-content: flex-start;
             align-items: center;
+            flex-wrap: wrap;
 
             gap: 30px;
             margin: 0;
-            padding: 0;
+            padding: 18px 0;
         }
 
         nav a {
@@ -99,52 +102,43 @@
             border-bottom: 1px solid var(--accent);
         }
 
-        .menu-button {
-            display: none;
-            padding: 8px 12px;
-
-            color: var(--dark);
-            background: transparent;
-            border: 1px solid var(--dark);
-
-            font-family: var(--sans);
-            font-weight: 600;
-            cursor: pointer;
-        }
-
         /* Research text */
 
         .research-page {
-            width: 100%;
-            padding: 90px 6% 110px;
+            display: flex;
+            align-items: center;
+
+            min-height: calc(100vh - 72px);
+            padding: 55px 2.7% 65px;
         }
 
         .research-text {
             width: 100%;
-            max-width: 1350px;
+            max-width: none;
             margin: 0;
         }
 
         .research-text p {
-            max-width: 1250px;
-            margin: 0 0 30px;
+            width: 100%;
+            max-width: none;
+            margin: 0 0 24px;
 
-            font-size: clamp(17px, 1.4vw, 20px);
-            line-height: 1.9;
+            font-family: Georgia, serif;
+            font-size: clamp(18px, 1.45vw, 23px);
+            font-style: italic;
+            line-height: 1.65;
             text-align: left;
         }
 
-        .research-text p:first-child {
-            font-family: Georgia, serif;
-            font-size: clamp(21px, 2vw, 29px);
-            font-style: italic;
-            line-height: 1.7;
+        .research-text p:last-child {
+            margin-bottom: 0;
         }
 
         /* Technical Expertise */
 
         .expertise {
-            padding: 100px 6% 120px;
+            min-height: 70vh;
+            padding: 90px 5% 110px;
 
             background-color: var(--light-background);
             border-top: 1px solid var(--line);
@@ -165,7 +159,7 @@
             flex-wrap: wrap;
             gap: 14px;
 
-            max-width: 1500px;
+            max-width: 1600px;
         }
 
         .skills span {
@@ -174,6 +168,7 @@
             border: 1px solid var(--line);
             border-radius: 50px;
 
+            font-family: var(--sans);
             font-size: 14px;
         }
 
@@ -195,6 +190,7 @@
             color: var(--light-background);
             background-color: var(--dark);
 
+            font-family: var(--sans);
             font-size: 13px;
         }
 
@@ -214,34 +210,25 @@
         /* Tablet */
 
         @media (max-width: 1050px) {
-            .menu-button {
-                display: block;
+            header {
+                position: relative;
             }
 
             nav {
-                position: absolute;
-                top: 72px;
-                right: 0;
-                left: 0;
-
-                display: none;
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0;
-
-                padding: 10px 25px 25px;
-
-                background-color: var(--light-background);
-                border-bottom: 1px solid var(--line);
-            }
-
-            nav.open {
-                display: flex;
+                gap: 20px;
             }
 
             nav a {
-                padding: 13px 0;
-                border-bottom: 1px solid var(--line);
+                font-size: 14px;
+            }
+
+            .research-page {
+                min-height: auto;
+                padding: 60px 5% 75px;
+            }
+
+            .research-text p {
+                font-size: 18px;
             }
         }
 
@@ -249,16 +236,31 @@
 
         @media (max-width: 550px) {
             header {
-                padding: 0 25px;
+                padding: 0 20px;
             }
 
-            .research-page,
-            .expertise {
-                padding: 65px 25px 80px;
+            nav {
+                gap: 12px 18px;
+                padding: 15px 0;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .research-page {
+                padding: 50px 25px 65px;
             }
 
             .research-text p {
-                font-size: 16px;
+                margin-bottom: 22px;
+                font-size: 17px;
+                line-height: 1.65;
+            }
+
+            .expertise {
+                min-height: auto;
+                padding: 75px 25px;
             }
 
             .expertise h1 {
@@ -280,14 +282,7 @@
 
     <header>
 
-        <button class="menu-button"
-                type="button"
-                aria-expanded="false"
-                aria-controls="main-navigation">
-            Menu
-        </button>
-
-        <nav id="main-navigation">
+        <nav>
 
             <a href="index.html">
                 About Me
@@ -326,9 +321,9 @@
 
     </header>
 
-    <!-- Research text -->
-
     <main>
+
+        <!-- Research text: first screen -->
 
         <section class="research-page">
 
@@ -360,28 +355,27 @@
 
                 <p>
                     Before beginning my Ph.D., I completed my M.Sc. and
-                    B.Sc. degrees in Biomedical Engineering at Amirkabir
-                    University of Technology. My master’s research
-                    involved modeling the effects of visual deprivation
-                    during treadmill walking, while my bachelor’s
-                    research involved analyzing anti-saccade
+                    B.Sc. degrees in Biomedical Engineering at
+                    Amirkabir University of Technology. My master’s
+                    research involved modeling the effects of visual
+                    deprivation during treadmill walking, while my
+                    bachelor’s research involved analyzing anti-saccade
                     eye-movement reaction times using a custom-designed
                     user interface.
                 </p>
 
                 <p>
-                    In addition to my academic experience, I worked as
-                    a Research and Development Engineer, where I
-                    developed skills in product development and
-                    innovation, team coordination, and operational
-                    efficiency.
+                    In addition to my academic experience, I worked as a
+                    Research and Development Engineer, where I developed
+                    skills in product development and innovation, team
+                    coordination, and operational efficiency.
                 </p>
 
             </div>
 
         </section>
 
-        <!-- Technical Expertise -->
+        <!-- Technical Expertise: scroll down -->
 
         <section class="expertise">
 
@@ -425,9 +419,7 @@
     <footer>
 
         <p>
-            &copy;
-            <span id="current-year">2026</span>
-            Negar Rahimi
+            &copy; 2026 Negar Rahimi
         </p>
 
         <a href="mailto:Negar.Rahimi@colorado.edu">
@@ -435,40 +427,6 @@
         </a>
 
     </footer>
-
-    <!-- Mobile navigation -->
-
-    <script>
-        const menuButton =
-            document.querySelector(".menu-button");
-
-        const navigation =
-            document.querySelector("#main-navigation");
-
-        menuButton.addEventListener("click", function () {
-            const menuIsOpen =
-                navigation.classList.toggle("open");
-
-            menuButton.setAttribute(
-                "aria-expanded",
-                menuIsOpen
-            );
-        });
-
-        navigation.querySelectorAll("a").forEach(function (link) {
-            link.addEventListener("click", function () {
-                navigation.classList.remove("open");
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-            });
-        });
-
-        document.querySelector("#current-year").textContent =
-            new Date().getFullYear();
-    </script>
 
 </body>
 
