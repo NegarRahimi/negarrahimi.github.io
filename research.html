@@ -12,6 +12,7 @@
 
     <title>Negar Rahimi | Research</title>
 
+    <!-- Google Fonts -->
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
 
@@ -39,13 +40,15 @@
 
         html {
             min-height: 100%;
-            overflow-y: auto;
             scroll-behavior: smooth;
         }
 
         body {
+            min-height: 100vh;
             margin: 0;
-            min-height: 100%;
+
+            display: flex;
+            flex-direction: column;
 
             color: var(--dark);
             background-color: var(--background);
@@ -102,31 +105,37 @@
             border-bottom: 1px solid var(--accent);
         }
 
+        /* Main page */
+
+        main {
+            flex: 1;
+
+            display: flex;
+            flex-direction: column;
+        }
+
         /* Research text */
 
         .research-page {
-            display: flex;
-            align-items: center;
+            width: 100%;
+            padding: 28px 2.5% 22px;
 
-            min-height: calc(100vh - 72px);
-            padding: 55px 2.7% 65px;
+            background-color: var(--background);
         }
 
         .research-text {
             width: 100%;
-            max-width: none;
             margin: 0;
         }
 
         .research-text p {
             width: 100%;
-            max-width: none;
-            margin: 0 0 24px;
+            margin: 0 0 13px;
 
             font-family: Georgia, serif;
-            font-size: clamp(18px, 1.45vw, 23px);
+            font-size: clamp(15px, 1.05vw, 18px);
             font-style: italic;
-            line-height: 1.65;
+            line-height: 1.5;
             text-align: left;
         }
 
@@ -137,18 +146,20 @@
         /* Technical Expertise */
 
         .expertise {
-            min-height: 70vh;
-            padding: 90px 5% 110px;
+            flex: 1;
+
+            width: 100%;
+            padding: 25px 2.5% 30px;
 
             background-color: var(--light-background);
             border-top: 1px solid var(--line);
         }
 
         .expertise h1 {
-            margin: 0 0 55px;
+            margin: 0 0 18px;
 
             font-family: var(--serif);
-            font-size: clamp(55px, 8vw, 110px);
+            font-size: clamp(38px, 4vw, 58px);
             font-weight: normal;
             line-height: 1.05;
             letter-spacing: -0.04em;
@@ -157,19 +168,25 @@
         .skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 14px;
+            gap: 8px;
 
-            max-width: 1600px;
+            width: 100%;
+            max-width: 1700px;
         }
 
         .skills span {
-            padding: 10px 18px;
+            padding: 6px 12px;
 
             border: 1px solid var(--line);
             border-radius: 50px;
 
             font-family: var(--sans);
-            font-size: 14px;
+            font-size: 12px;
+
+            transition:
+                color 0.2s ease,
+                background-color 0.2s ease,
+                border-color 0.2s ease;
         }
 
         .skills span:hover {
@@ -181,11 +198,15 @@
         /* Footer */
 
         footer {
+            flex-shrink: 0;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
 
-            padding: 22px 6%;
+            width: 100%;
+            margin-top: auto;
+            padding: 14px 6%;
 
             color: var(--light-background);
             background-color: var(--dark);
@@ -223,12 +244,21 @@
             }
 
             .research-page {
-                min-height: auto;
-                padding: 60px 5% 75px;
+                padding: 35px 5% 30px;
             }
 
             .research-text p {
-                font-size: 18px;
+                margin-bottom: 18px;
+                font-size: 17px;
+                line-height: 1.6;
+            }
+
+            .expertise {
+                padding: 35px 5% 45px;
+            }
+
+            .expertise h1 {
+                font-size: 48px;
             }
         }
 
@@ -249,76 +279,41 @@
             }
 
             .research-page {
-                padding: 50px 25px 65px;
+                padding: 40px 25px 35px;
             }
 
             .research-text p {
-                margin-bottom: 22px;
-                font-size: 17px;
-                line-height: 1.65;
+                margin-bottom: 20px;
+                font-size: 16px;
+                line-height: 1.6;
             }
 
             .expertise {
-                min-height: auto;
-                padding: 75px 25px;
+                padding: 40px 25px 50px;
             }
 
             .expertise h1 {
-                font-size: 52px;
+                margin-bottom: 25px;
+                font-size: 44px;
+            }
+
+            .skills {
+                gap: 9px;
+            }
+
+            .skills span {
+                padding: 7px 12px;
+                font-size: 12px;
             }
 
             footer {
                 flex-direction: column;
                 gap: 10px;
+
+                padding: 18px 20px;
                 text-align: center;
             }
         }
-
-        /* Fit research text and expertise within one desktop screen */
-
-.research-page {
-    display: block;
-    min-height: auto;
-    padding: 28px 2.5% 22px;
-}
-
-.research-text p {
-    margin: 0 0 13px;
-
-    font-family: Georgia, serif;
-    font-size: clamp(15px, 1.05vw, 18px);
-    font-style: italic;
-    line-height: 1.5;
-}
-
-.research-text p:last-child {
-    margin-bottom: 0;
-}
-
-.expertise {
-    min-height: auto;
-    padding: 25px 2.5% 30px;
-}
-
-.expertise h1 {
-    margin: 0 0 18px;
-    font-size: clamp(38px, 4vw, 58px);
-}
-
-.skills {
-    gap: 8px;
-}
-
-.skills span {
-    padding: 6px 12px;
-    font-size: 12px;
-}
-
-footer {
-    padding-top: 14px;
-    padding-bottom: 14px;
-}
-        
     </style>
 </head>
 
@@ -327,9 +322,7 @@ footer {
     <!-- Navigation -->
 
     <header>
-
         <nav>
-
             <a href="index.html">
                 About Me
             </a>
@@ -362,17 +355,14 @@ footer {
             <a href="contact.html">
                 Contact
             </a>
-
         </nav>
-
     </header>
 
     <main>
 
-        <!-- Research text: first screen -->
+        <!-- Research information -->
 
         <section class="research-page">
-
             <div class="research-text">
 
                 <p>
@@ -418,19 +408,15 @@ footer {
                 </p>
 
             </div>
-
         </section>
 
-        <!-- Technical Expertise: scroll down -->
+        <!-- Technical Expertise -->
 
         <section class="expertise">
 
-            <h1>
-                Technical Expertise
-            </h1>
+            <h1>Technical Expertise</h1>
 
             <div class="skills">
-
                 <span>MATLAB</span>
                 <span>Python</span>
                 <span>Machine Learning</span>
@@ -453,7 +439,6 @@ footer {
                 <span>Experimental Design</span>
                 <span>Clinical Research</span>
                 <span>Data Collection</span>
-
             </div>
 
         </section>
@@ -463,7 +448,6 @@ footer {
     <!-- Footer -->
 
     <footer>
-
         <p>
             &copy; 2026 Negar Rahimi
         </p>
@@ -471,7 +455,6 @@ footer {
         <a href="mailto:Negar.Rahimi@colorado.edu">
             Negar.Rahimi@colorado.edu
         </a>
-
     </footer>
 
 </body>
