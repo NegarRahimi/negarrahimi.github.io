@@ -493,11 +493,23 @@
                 text-align: center;
             }
         }
-        .hero-name,
-        .university {
-            position: relative !important;
-            transform: translateY(-40px) !important;
-        }
+        
+        .hero-name {
+    font-family: var(--sans) !important;
+    font-size: clamp(44px, 4.5vw, 66px) !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.04em;
+}
+
+.photo-container {
+    transform: translateX(-50px);
+}
+
+@media (max-width: 1050px) {
+    .photo-container {
+        transform: none;
+    }
+}
         
     </style>
 </head>
