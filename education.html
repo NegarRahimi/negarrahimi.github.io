@@ -385,6 +385,51 @@
         align-items: start;
     }
 }
+/* Match this page title to the Research title */
+
+.page-title {
+    margin: 0 0 22px;
+
+    font-family: var(--serif);
+    font-size: clamp(55px, 5vw, 78px);
+    font-weight: normal;
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+/* Large desktop */
+
+@media (min-width: 1500px) and (min-height: 760px) {
+    .page-title {
+        font-size: clamp(64px, 4.2vw, 78px);
+    }
+}
+
+/* Medium desktop */
+
+@media (min-width: 1200px) and (max-width: 1499px) {
+    .page-title {
+        font-size: 52px;
+    }
+}
+
+/* Tablet */
+
+@media (max-width: 1050px) {
+    .page-title {
+        font-size: 58px;
+    }
+}
+
+/* Phone */
+
+@media (max-width: 550px) {
+    .page-title {
+        margin-bottom: 25px;
+        font-size: 48px;
+    }
+}
+        
     </style>
 </head>
 
