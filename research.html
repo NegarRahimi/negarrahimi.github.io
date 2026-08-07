@@ -345,7 +345,24 @@
         .expertise h1 {
             margin-bottom: 22px;
         }
+/* Research page heading */
 
+.research-heading {
+    margin: 0 0 20px;
+
+    font-family: var(--serif);
+    font-size: clamp(48px, 5vw, 72px);
+    font-weight: normal;
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+@media (max-width: 550px) {
+    .research-heading {
+        margin-bottom: 25px;
+        font-size: 48px;
+    }
+}
     </style>
 </head>
 
@@ -394,8 +411,13 @@
 
         <!-- Research information -->
 
-        <section class="research-page">
-            <div class="research-text">
+<section class="research-page">
+
+    <h1 class="research-heading">
+        Research
+    </h1>
+
+    <div class="research-text">
 
                 <p>
                     I am currently pursuing my Ph.D. in the
