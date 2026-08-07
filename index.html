@@ -3,23 +3,19 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
           content="Academic website of Negar Rahimi, Ph.D. candidate at the University of Colorado Boulder.">
 
     <title>Negar Rahimi | About Me</title>
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect"
           href="https://fonts.gstatic.com"
           crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&family=Libre+Caslon+Display&display=swap"
           rel="stylesheet">
 
     <style>
@@ -30,6 +26,7 @@
             --accent: #704b3a;
             --line: rgba(48, 45, 42, 0.25);
             --serif: "Libre Caslon Display", Georgia, serif;
+            --name-font: "Cormorant Garamond", Georgia, serif;
             --sans: "DM Sans", Arial, sans-serif;
         }
 
@@ -128,24 +125,26 @@
             max-width: 900px;
         }
 
-        /* Negar Rahimi */
+        /* Name */
 
         .hero-name {
             position: relative;
-            transform: translateY(-90px);
+            transform: translateY(-110px);
 
             margin: 0 0 12px;
 
-            font-family: var(--sans);
-            font-size: clamp(45px, 4.5vw, 68px);
-            font-weight: 700;
-            line-height: 1.05;
-            letter-spacing: -0.045em;
+            font-family: var(--name-font);
+            font-size: clamp(52px, 5.5vw, 80px);
+            font-weight: 600;
+            line-height: 1;
+            letter-spacing: -0.035em;
         }
+
+        /* University */
 
         .university {
             position: relative;
-            transform: translateY(-90px);
+            transform: translateY(-110px);
 
             margin: 0 0 25px;
 
@@ -163,6 +162,8 @@
             font-weight: normal;
             line-height: 1.05;
         }
+
+        /* Ph.D. Candidate */
 
         h1 {
             margin-bottom: 28px;
@@ -191,7 +192,6 @@
             border-radius: 48% 48% 5px 5px;
             background-color: #ad9886;
 
-            /* Move the photograph left */
             transform: translateX(-55px);
         }
 
@@ -329,7 +329,7 @@
             font-size: 13px;
         }
 
-        /* Contact section */
+        /* Contact */
 
         .contact-preview {
             padding: 110px 9%;
@@ -381,7 +381,6 @@
 
             color: var(--light-background);
             background-color: #24211f;
-
             font-size: 13px;
         }
 
@@ -393,7 +392,7 @@
             text-decoration: none;
         }
 
-        /* Tablet and mobile */
+        /* Tablet */
 
         @media (max-width: 1050px) {
             .menu-button {
@@ -437,7 +436,7 @@
             }
 
             .hero-name {
-                font-size: clamp(42px, 10vw, 60px);
+                font-size: clamp(48px, 12vw, 68px);
             }
 
             h1 {
@@ -469,6 +468,8 @@
             }
         }
 
+        /* Phone */
+
         @media (max-width: 550px) {
             header {
                 padding: 0 25px;
@@ -479,7 +480,7 @@
             }
 
             .hero-name {
-                font-size: 40px;
+                font-size: 45px;
             }
 
             h1 {
@@ -519,8 +520,7 @@
 
         <nav id="main-navigation">
 
-            <a class="active"
-               href="index.html">
+            <a class="active" href="index.html">
                 About Me
             </a>
 
@@ -596,8 +596,7 @@
 
         </section>
 
-        <section class="about"
-                 id="about">
+        <section class="about" id="about">
 
             <p class="section-number">
                 01 / About Me
@@ -756,8 +755,7 @@
                 digital health, and collaborative research.
             </p>
 
-            <a class="button"
-               href="contact.html">
+            <a class="button" href="contact.html">
                 Contact Me
             </a>
 
