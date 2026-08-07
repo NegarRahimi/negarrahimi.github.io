@@ -306,7 +306,7 @@
                 font-size: 12px;
             }
 
-            footer {
+                    footer {
                 flex-direction: column;
                 gap: 10px;
 
@@ -314,6 +314,38 @@
                 text-align: center;
             }
         }
+
+        /* Better vertical spacing for the Research page */
+
+        .research-page {
+            padding: 34px 2.5% 32px;
+        }
+
+        .research-text p {
+            margin: 0 0 17px;
+
+            font-size: clamp(17px, 1.15vw, 20px);
+            line-height: 1.65;
+        }
+
+        .research-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .expertise {
+            flex: 1;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            padding: 30px 2.5%;
+        }
+
+        .expertise h1 {
+            margin-bottom: 22px;
+        }
+
     </style>
 </head>
 
