@@ -271,6 +271,55 @@
             line-height: 1.65;
         }
 
+        /* Technical Expertise */
+
+        .expertise {
+            width: 100%;
+            padding: 48px 4% 55px;
+
+            background-color: var(--light-background);
+            border-top: 1px solid var(--line);
+        }
+
+        .expertise h2 {
+            margin: 0 0 24px;
+
+            font-family: var(--serif);
+            font-size: clamp(38px, 4vw, 58px);
+            font-weight: normal;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+
+            width: 100%;
+            max-width: 1700px;
+        }
+
+        .skills span {
+            padding: 7px 13px;
+
+            border: 1px solid var(--line);
+            border-radius: 50px;
+
+            font-size: 12px;
+
+            transition:
+                color 0.2s ease,
+                background-color 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .skills span:hover {
+            color: var(--light-background);
+            background-color: var(--accent);
+            border-color: var(--accent);
+        }
+
         /* Footer */
 
         footer {
@@ -385,6 +434,15 @@
             .responsibilities li,
             .course-list {
                 font-size: 16px;
+            }
+
+            .expertise {
+                padding: 40px 25px 50px;
+            }
+
+            .expertise h2 {
+                margin-bottom: 22px;
+                font-size: 42px;
             }
 
             footer {
@@ -676,6 +734,39 @@
 
                 </article>
 
+            </div>
+
+        </section>
+
+        <!-- Technical Expertise -->
+
+        <section class="expertise">
+
+            <h2>Technical Expertise</h2>
+
+            <div class="skills">
+                <span>MATLAB</span>
+                <span>Python</span>
+                <span>Machine Learning</span>
+                <span>Deep Learning</span>
+                <span>Statistical Analysis</span>
+                <span>Computational Modeling</span>
+                <span>Electromyography</span>
+                <span>Motor Units</span>
+                <span>Center of Pressure</span>
+                <span>Force Sensors</span>
+                <span>Wearable Sensors</span>
+                <span>IMU</span>
+                <span>TENS</span>
+                <span>NMES</span>
+                <span>TensorFlow</span>
+                <span>PyTorch</span>
+                <span>Scikit-learn</span>
+                <span>MATLAB Simulink</span>
+                <span>C/C++</span>
+                <span>Experimental Design</span>
+                <span>Clinical Research</span>
+                <span>Data Collection</span>
             </div>
 
         </section>
